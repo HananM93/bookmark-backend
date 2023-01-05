@@ -12,6 +12,8 @@ const express = require("express")
 // create application object
 const app = express()
 const mongoose = require('mongoose')
+const morgan = require("morgan")
+const cors = require("cors")
 
 // DATABASE CONNECTION
 mongoose.connect(process.env.DATABASE_URL, {})
