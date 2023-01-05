@@ -26,4 +26,3 @@ url: {type: String},``
 | Route | Renders | Component |
 | :---: | :-----: | :-------: |
 | /bookmarks | current bookmarks and form to add | Bookmarks |
-
