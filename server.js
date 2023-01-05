@@ -27,6 +27,13 @@ const bookmarkSchema = new mongoose.Schema({
 
 const Bookmark = mongoose.model('bookmark', bookmarkSchema)
 
+  // MiddleWare
+  
+  app.use(cors()) // prevents cross origin resource sharing errors, allows access to server from all origins i.e. react frontend
+  app.use(morgan("dev")) // loggs details of all server hits to terminal 
+  app.use(express.json()) // parse json bodies from request
+  app.use(express.urlencoded({extended: false})); // to use URL encoded
+
 // ROUTES IDUC
 
 // create a test route
@@ -35,23 +42,40 @@ app.get("/", (req, res) => {
 })
 
 // INDEX - all bookmarks
-app.get('/bookmarks', (req, res) => {
-  res.send('These sites are bookmarked')
+app.get('/bookmarks', async (req, res) => {
+  try {
+    res.status(200).json (await Bookmark.find({}))
+  } catch (error) {
+    res.status(400).json(error)
+  }
 })
 
 // DELETE 
-app.delete('/bookmarks/:id', (req, res) => {
-  
+app.delete('/bookmarks/:id', async (req, res) => {
+  try {
+    res.status(200).json (await Bookmark.findByIdAndDelete(req.params.id))
+  } catch (error) {
+    res.status(400).json(error)
+  }
 })
 
 // UPDATE
-app.put('/bookmarks/:id', (req, res) => {
+app.put('/bookmarks/:id', async (req, res) => {
+  try {
+    res.status(200).json (await Bookmark.findByIdAndUpdate(req.params.id, req.body, { new: true }))
+  } catch (error) {
+    res.status(400).json(error)
+  }
 
 })
 
 // CREATE
-app.post('/bookmarks', (req, res) => {
-
+app.post('/bookmarks', async (req, res) => {
+  try {
+    res.status(200).json (await Bookmark.create (req.body))
+  } catch (error) {
+    res.status(400).json(error)
+  }
 })
 
 
