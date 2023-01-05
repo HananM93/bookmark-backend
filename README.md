@@ -1,25 +1,25 @@
 # Project Contributors
 
-Hanan Mohamed.\
-Ashton Bowens.\
-Ermiyas Hailemichael.\
-Krissy Macdonald.\
+Hanan Mohamed\
+Ashton Bowens\
+Ermiyas Hailemichael\
+Krissy Macdonald
 
 ## Dependencies Used
 
-cors.\
-dotenv.\
-express.\
-mongoose.\
-morgan.\
+cors\
+dotenv\
+express\
+mongoose\
+morgan
 
 ## Models
 
-Bookmark.\
-'''
-title: {type: String},
-url: {type: String},
-'''
+Bookmark\
+
+``title: {type: String},
+url: {type: String},``
+
 
 ## Route Table
 
