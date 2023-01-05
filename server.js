@@ -1,6 +1,8 @@
 
 // DEPENDENCIES
 
+// SEED
+const bkmkSeed = require('./seed.js')
 // get .env variables
 require("dotenv").config()
 // pull PORT from .env, give default value of 3001
@@ -40,6 +42,13 @@ const Bookmark = mongoose.model('bookmark', bookmarkSchema)
 app.get("/", (req, res) => {
   res.send("hello world")
 })
+
+// SEED
+// app.get('/seed', (req, res) => {
+//   Bookmark.create(bkmkSeed, (err, data) => {
+//     res.redirect('/bookmarks')
+//   })
+// })
 
 // INDEX - all bookmarks
 app.get('/bookmarks', async (req, res) => {
