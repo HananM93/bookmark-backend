@@ -11,7 +11,7 @@ const express = require("express")
 const app = express()
 
 
-// ROUTES
+// ROUTES IDUC
 
 // create a test route
 app.get("/", (req, res) => {
