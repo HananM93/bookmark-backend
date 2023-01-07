@@ -45,12 +45,12 @@ app.get("/", (req, res) => {
   res.send("hello world")
 })
 
-// SEED
-// app.get('/seed', (req, res) => {
-//   Bookmark.create(bkmkSeed, (err, data) => {
-//     res.redirect('/bookmarks')
-//   })
-// })
+//SEED
+app.get('/seed', (req, res) => {
+  Bookmark.create(bkmkSeed, (err, data) => {
+    res.redirect('/bookmarks')
+  })
+})
 
 // INDEX - all bookmarks
 app.get('/bookmarks', async (req, res) => {
