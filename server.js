@@ -2,7 +2,7 @@
 // DEPENDENCIES
 
 // SEED
-const bkmkSeed = require('./seed.js')
+// const bkmkSeed = require('./seed.js')
 // get .env variables
 require("dotenv").config()
 // pull PORT from .env, give default value of 3001
@@ -12,8 +12,8 @@ const express = require("express")
 // create application object
 const app = express()
 const mongoose = require('mongoose')
-const morgan = require("morgan")
 const cors = require("cors")
+const morgan = require("morgan")
 
 // DATABASE CONNECTION
 mongoose.connect(process.env.DATABASE_URL, {})
